@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en" xmlns="">
+
+<head>
+
+
+    <!-- Javascript
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/utils/Draggable.min.js"></script>
+
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ThrowPropsPlugin.min.js"></script>
+
+
+
+
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Your page title here :)</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+    ––––––––––––––––––––––––––––––––––––––––––––––––––
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/skeleton.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+
+
+    <style>
+        html {
+            background: url('images/background4.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        html, body, #info, #stage{
+            width:100%;
+            height:100%;
+            overflow:hidden;
+        }
+
+    </style>
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+
+<body>
+
+<!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<div id='info'>Drag and Throw The Cards</div>
+<div id="stage" ></div>
+
+
+<script>
+    function init(){
+
+        body = document.body;
+        stage = document.getElementById('stage');
+        nullObject = document.createElement('div');
+        TweenLite.defaultEase = Power2.easeOut;
+        spacerZ = 50, maxDrag = 300, perspective = 800;
+
+        TweenMax.set(stage, {
+            perspective:perspective,
+            perspectiveOrigin:'50% -100%'
+        })
+        TweenMax.set('#info',{
+            position:'absolute',
+            left:'50%',
+            xPercent:-50,
+            top:'10%',
+            fontFamily:'Roboto Slab',
+            fontSize:32,
+            color:'rgba(44,46,47,1)',
+            textAlign:'center'
+        })
+        TweenMax.set(nullObject, {
+            position:'absolute',
+            x:0
+        })
+
+        cardDataArray = [
+            {imageUrl:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/science.png', cardTitle:'Here\'s The Science', cardBody:'Science you love played at twice the speed in a bar you hate whilst drinking shampoo through a straw.'},   {imageUrl:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/hacker.png', cardTitle:'So You\'re a Hacker', cardBody:'Hackers you love played at twice the speed in a bar you hate whilst drinking shampoo through a straw.'},
+
+            {imageUrl:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/folds.png', cardTitle:'A View of Material', cardBody:'Material you love played at twice the speed in a bar you hate whilst drinking shampoo through a straw.'},
+            {imageUrl:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/building.png', cardTitle:'Visit The Cityscape', cardBody:'Cities you love played at twice the speed in a bar you hate whilst drinking shampoo through a straw.'},
+            {imageUrl:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/bars.png', cardTitle:'Four Bar Blues', cardBody:'Music you love played at twice the speed in a bar you hate whilst drinking shampoo through a straw.'},
+            {imageUrl:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/shards.png', cardTitle:'A Fractured Story', cardBody:'Stories you love played at twice the speed in a bar you hate whilst drinking shampoo through a straw.'},
+            {imageUrl:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/wet.png', cardTitle:'Dew on Metal: It\'s New', cardBody:'Metal you love played at twice the speed in a bar you hate whilst drinking shampoo through a straw.'}];
+        cardElementArray = []
+
+        createCards();
+
+
+        Draggable.create(nullObject, {
+            type:'x',
+            trigger:stage,
+            throwProps:true,
+            onDrag:throwUpdate,
+            onThrowUpdate:throwUpdate,
+            onDragEnd:dragEnd,
+            snap:[0]
+        })
+    }
+
+    function createCards(){
+
+        for(var i = 0; i < cardDataArray.length; i++){
+
+            //var cardSymbol = sym.createChildSymbol(cardDataArray[i], stage);
+            //cardElement = cardSymbol.getSymbolElement();
+            cardElement = document.createElement('div');
+            cardImage = document.createElement('img');
+            cardTitle = document.createElement('div');
+            cardTitle.className = 'card-title';
+            cardPanel = document.createElement('div');
+            cardBodyText = document.createElement('div');
+            cardShareText = document.createElement('div');
+            cardActionText = document.createElement('div');
+            cardImage.setAttribute('src', cardDataArray[i].imageUrl);
+
+            TweenMax.set(cardImage, {
+                position:'absolute',
+                alpha:0.8
+            })
+
+            cardTitle.innerHTML = cardDataArray[i].cardTitle;
+            cardBodyText.innerHTML = cardDataArray[i].cardBody
+            cardShareText.innerHTML = '<a href="http://www.google.com">Google</a>';
+            cardActionText.innerHTML = 'EXPLORE';
+            TweenMax.set(cardTitle, {
+                position:'absolute',
+                top:136,
+                left:15,
+                width:345,
+                fontSize:26,
+                color:'#fff',
+                fontFamily:'Roboto Slab, sans-serif'
+            })
+            ;
+
+            TweenMax.set(cardPanel, {
+                position:'absolute',
+                top:185,
+                left:0,
+                width:360,
+                height:135,
+                backgroundColor:'#fff',
+                color:'#000',
+                fontFamily:'Roboto, sans-serif'
+            })
+            TweenMax.set(cardBodyText, {
+                position:'absolute',
+                top:200,
+                left:15,
+                width:330,
+                height:100,
+                fontSize:15,
+                color:'#000',
+                fontFamily:'Roboto, sans-serif'
+            })
+            ;
+            TweenMax.set([cardActionText, cardShareText], {
+                position:'absolute',
+                top:290,
+                width:80,
+                height:50,
+                fontSize:15,
+                color:'#000',
+                fontFamily:'Roboto, sans-serif'
+            })
+
+            TweenMax.set(cardActionText, {
+                left:115,
+                color:'#FFAB40'
+            })
+            TweenMax.set(cardShareText, {
+                left:15
+            })
+            ;
+
+            TweenMax.set(cardElement, {
+                position:'absolute',
+                left:'50%',
+                xPercent:-50,
+                top:'50%',
+                yPercent:-50,
+                z:-(i * spacerZ),
+                //autoAlpha:0,
+                zIndex:-i,
+                transformPerspective:'150% -20%',
+                width:360,
+                height:320,
+                backgroundColor:'#000',
+                borderRadius:'2px',
+                overflow:'hidden',
+                boxShadow:'0px 0px 5px 2px rgba(0,0,0,0.2)',
+                scale:0
+            })
+
+            cardElement.appendChild(cardImage);
+            cardElement.appendChild(cardPanel);
+            cardElement.appendChild(cardBodyText);
+            cardElement.appendChild(cardTitle);
+            cardElement.appendChild(cardShareText);
+            cardElement.appendChild(cardActionText);
+            stage.appendChild(cardElement);
+
+            cardElementArray.push(cardElement);
+        }
+        TweenMax.staggerFromTo(cardElementArray, 1, {
+            scale:0
+        }, {
+            scale:1,
+            force3D:true,
+            ease:Elastic.easeOut.config(0.7,0.8)
+        }, 0.1, function(){
+            //cardElementArray.reverse()
+        })
+
+    }
+
+    function throwUpdate(){
+
+        var i = cardElementArray.length;
+
+
+        while(--i > -1){
+
+
+            var rot = nullObject._gsTransform.x/20;
+            var z = Math.abs(cardElementArray[i]._gsTransform.z/200);
+            var x = nullObject._gsTransform.x;
+            var y = nullObject._gsTransform.y;
+            TweenMax.to(cardElementArray[i], 0.7, {
+                x:x - (x * z),
+                y:-nullObject._gsTransform.x/10,
+                rotation:rot - (rot * z),
+                force3D:true,
+                ease:Power2.easeOut
+
+
+            })
+
+        }
+
+        throwSpeed = ThrowPropsPlugin.getVelocity(this.target, "x")/1000;
+
+    }
+
+    function dragEnd(){
+
+        var time = (nullObject._gsTransform.x / throwSpeed)/100;
+
+        if(nullObject._gsTransform.x > (maxDrag) || throwSpeed > 3){
+
+            time = (time>3) ? 1 : time;
+            TweenMax.to(cardElementArray[0], time, {
+                left:'+=50%',
+                ease:Power2.easeOut,
+                onStart:removeCard
+
+            })
+        }
+
+    }
+
+    function removeCard(){
+
+        var c = cardElementArray.shift();
+
+
+        TweenMax.to(cardElementArray, 1, {
+            z:'+=' + spacerZ,
+            //ease:Back.easeOut,
+            onComplete:checkCards,
+            onCompleteParams:[c]
+        })
+
+    }
+
+
+    function checkCards(c){
+        c.parentNode.removeChild(c);
+        if(cardElementArray.length == 0){
+
+            createCards();
+        }
+    }
+
+    init();
+</script>
+
+</body>
+</html>

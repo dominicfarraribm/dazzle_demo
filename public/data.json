@@ -1,0 +1,55 @@
+{
+  "_id": "cloud_private_1",
+  "_rev": "2-b956533bd20e2e972437ce385848cad8",
+  "cards": [
+    {
+      "item": "Slides",
+      "title": "Cloud-public",
+      "icon": "/images/icons/pdf-icon.png",
+      "links": [
+        {
+          "name": "link name",
+          "url": "http://#"
+        }
+      ]
+    },
+    {
+      "item": "Slides",
+      "title": "Cloud-private",
+      "icon": "/images/icons/pdf-icon.png",
+      "links": [
+        {
+          "name": "link name 1",
+          "url": "http://#"
+        },
+        {
+          "name": "link name 2",
+          "url": "http://#"
+        },
+        {
+          "name": "link name 3",
+          "url": "http://#"
+        }
+      ]
+    },
+    {
+      "item": "Demo",
+      "title": "Cloud Private",
+      "icon": "/images/icons/pdf-icon.png",
+      "links": [
+        {
+          "name": "link name 1",
+          "url": "http://#"
+        },
+        {
+          "name": "link name 2",
+          "url": "http://#"
+        },
+        {
+          "name": "link name 3",
+          "url": "http://#"
+        }
+      ]
+    }
+  ]
+}

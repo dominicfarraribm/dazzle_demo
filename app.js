@@ -4,11 +4,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// These are the Express Routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var echoRouter = require('./routes/echo');
 var chuckRouter = require('./routes/chuck');
 var bluebirdRouter = require('./routes/bluebird');
+var showRouter = require('./routes/show');
+var show2Router = require('./routes/show2');
+var show3Router = require('./routes/show3');
+var showcardsRouter = require('./routes/showcards');
 
 var app = express();
 
@@ -22,11 +27,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// These are the routes.
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/echo', echoRouter);
 app.use('/chuck', chuckRouter);
 app.use('/bluebird', bluebirdRouter);
+app.use('/show', showRouter);
+app.use('/show2', show2Router);
+app.use('/show3', show3Router);
+app.use('/showcards', showcardsRouter);
 
 
 // catch 404 and forward to error handler

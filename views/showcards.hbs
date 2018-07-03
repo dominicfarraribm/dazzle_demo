@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Flipster Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=550, initial-scale=1">
+
+    <link rel="stylesheet" href="stylesheets/demo.css">
+    <link rel="stylesheet" href="stylesheets/jquery.flipster.css">
+
+    <style>
+        html {
+            background: url('images/background4.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="flipstersrc/jquery.flipster.min.js"></script>
+</head>
+<body>
+<header class="main-header">
+    <h1>Interactive Meeting</h1>
+    <a href="https://www.ibm.com/cloud/" target="_blank"><img src="images/icons/ibm_cloud-small.png" align="top"></a>
+
+    <nav class="main-header__nav" role="navigation">
+        <a href="#flipcards">Agenda Topics</a>
+        <a href="#demo-wheel">Stuff 2</a>
+        <a href="#demo-flat">Stuff 3</a>
+        <a href="https://ibm-dte.mybluemix.net/" target="_blank" >DTE Assets</a>
+    </nav>
+    <br>
+
+    <h2>The IBM Team</h2>
+    <p><a href="https://www.linkedin.com/in/davekrier/" target="_blank" >Dave Krier</a></p>
+    <p><a href="https://www.linkedin.com/in/newberryv1/" target="_blank" >Vic Newberry</a></p>
+</header>
+
+
+<article id="flipcards" class="demo">
+
+    <div id="carousel">
+        <ul class="flip-items">
+            <li data-flip-title="Cloud Private" data-flip-category="Slides">
+                <div class="rcornersbox">
+                    <img src="images/icons/pdf-icon.png" style="width:100px;height:100px;">
+                    <p><a href="https://ibm.box.com/shared/static/u7c9rr4aifq22yl7tbtzxslfir8py0ro.pdf" target="_blank">ICP Slides</a></p>
+                    <p><a href="https://ibm.box.com/shared/static/frovw5kgp06vpy4nibaldv0645lomfj3.pdf" target="_blank">Intro to Kubernetes</a></p>
+                    <p><a href="https://ibm.box.com/shared/static/514d2lxk6paufj7owuhm5wb4p20cdhuu.pdf" target="_blank">Kubernetes Deployment Example</a></p>
+                </div>
+            </li>
+            <li data-flip-title="Cloud Private" data-flip-category="Demo">
+                <div class="rcornersbox">
+                    <img src="images/icons/live-demo.png" style="width:100px;height:100px;">
+                    <p><a href="https://www.w3schools.com" target="_blank">Visit W3Schools</a></p>
+                    <p><a href="https://www.w3schools.com" target="_blank">Link 2</a></p>
+                    <p><a href="https://www.w3schools.com" target="_blank">Link 3 </a></p>
+                </div>
+            </li>
+            <li data-flip-title="Cloud Public" data-flip-category="Demo">
+                <div class="rcornersbox">
+                    <img src="images/icons/docker.png" style="width:100px;height:100px;">
+                    <p><a href="https://www.w3schools.com" target="_blank">Visit W3Schools</a></p>
+                    <p><a href="https://www.w3schools.com" target="_blank">Link 2</a></p>
+                    <p><a href="https://www.w3schools.com" target="_blank">Link 3 </a></p>
+                </div>
+            </li>
+            <li data-flip-title="Learning" data-flip-category="Additional Materials">
+                <div class="rcornersbox">
+                    <img src="images/icons/learning.png" style="width:100px;height:100px;">
+                    <p><a href="https://www.w3schools.com">Visit W3Schools</a></p>
+                    <p><a href="https://www.w3schools.com">Link 2</a></p>
+                    <p><a href="https://www.w3schools.com">Link 3 </a></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var carousel = $("#carousel").flipster({
+            style: 'carousel',
+            spacing: -0.5,
+            nav: true,
+            buttons:   true,
+            start:0
+        });
+    </script>
+
+
+
+</article>
+
+<article id="demo-wheel" class="demo">
+
+    <h2>Flipster Wheel</h2>
+
+    <!-- Stuff can go here Here -->
+
+</article>
+
+
+<article id="demo-flat" class="demo">
+
+    <h2>Additional Contentt</h2>
+
+    <!-- Stuff can go here Here -->
+
+
+</article>
+
+
+
+<a href="https://github.com/drien/jquery-flipster/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork Me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+
+
+</body>
+</html>

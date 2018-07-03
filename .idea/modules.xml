@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/baseNodeJsApp.iml" filepath="$PROJECT_DIR$/.idea/baseNodeJsApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dazzleDemoApp.iml" filepath="$PROJECT_DIR$/.idea/dazzleDemoApp.iml" />
     </modules>
   </component>
 </project>
