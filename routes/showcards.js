@@ -54,7 +54,6 @@ var cloudantcall = function(url, db) {
 
             // Initialize the Cloudant Connection with my Cludant URL.
             var cloudant = Cloudant(url, function(er, cloudant, reply) {
-            //var cloudant = Cloudant('https://a3283e3d-ad02-4fee-bbd9-13b620b1ec03-bluemix:ec3150cdcc9932ab891fd976380aac7dbef1b283eb45789494e07ece9d76fb86@a3283e3d-ad02-4fee-bbd9-13b620b1ec03-bluemix.cloudant.com', function(er, cloudant, reply) {
 
                 if (er) {
                     //throw er;
@@ -85,7 +84,7 @@ var cloudantcall = function(url, db) {
 /* GET cards page. */
 router.get('/', function(req, res, next) {
     //Let's execute the promise
-    cloudantcall('https://a3283e3d-ad02-4fee-bbd9-13b620b1ec03-bluemix:ec3150cdcc9932ab891fd976380aac7dbef1b283eb45789494e07ece9d76fb86@a3283e3d-ad02-4fee-bbd9-13b620b1ec03-bluemix.cloudant.com','templates')
+    cloudantcall('','templates')
         .then(function(result) {
             console.log(result); // will print 7 in the console
             res.render('showcards', { resultofbb: result });

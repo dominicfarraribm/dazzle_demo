@@ -2,44 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5754577d-41ac-4fe9-8829-56647d2ecd2f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/flipstersrc/jquery.flipster.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/flipstersrc/jquery.flipster.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/background2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/background3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/background4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/circuits_background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/icons/discussion-icon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/icons/docker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/icons/ibm-cloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/icons/ibm_cloud-small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/icons/lab-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/icons/learning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/icons/live-demo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/icons/pdf-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/icons/video-icon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/jquery.flipster.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/jquery.flipster.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/normalize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/skeleton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/show.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/show2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/show3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/showcards-save.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/showcards.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/show.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/show2.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/show3.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/showcards.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/baseNodeJsApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dazzleDemoApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/showcards.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/showcards.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -56,16 +19,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="showcards.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="showcards.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/showcards.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+            <state relative-caret-position="228">
+              <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/data.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
@@ -142,8 +105,8 @@
         <option value="$PROJECT_DIR$/views/showcards.hbs" />
         <option value="$PROJECT_DIR$/public/stylesheets/demo.css" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/routes/showcards.js" />
         <option value="$PROJECT_DIR$/public/data.json" />
+        <option value="$PROJECT_DIR$/routes/showcards.js" />
       </list>
     </option>
   </component>
@@ -307,7 +270,7 @@
       <workItem from="1530028126160" duration="22000" />
       <workItem from="1530028168740" duration="1070000" />
       <workItem from="1530129646415" duration="56154000" />
-      <workItem from="1530566881842" duration="7464000" />
+      <workItem from="1530566881842" duration="7599000" />
     </task>
     <task id="LOCAL-00001" summary="Initial committ.">
       <created>1526234142064</created>
@@ -334,7 +297,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82313000" />
+    <option name="totallyTimeSpent" value="82448000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="29" y="73" width="1561" height="799" extended-state="0" />
@@ -654,17 +617,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/showcards.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/showcards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
         </state>
       </provider>
     </entry>
